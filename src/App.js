@@ -5,16 +5,17 @@ import Home from './Navbar/Home';
 import Projects from './Navbar/Projects';
 import About from './Navbar/About';
 import Contact from './Navbar/Contact';
+import onScroll from './Components/Nav'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare, faCoffee, faBars } from '@fortawesome/free-solid-svg-icons'
 
-library.add(fab, faCheckSquare, faCoffee)
+library.add(fab, faCheckSquare, faCoffee, faBars)
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="item">
+      <div id="item">
         <Link to="/" className="navbar">Home</Link>
         <Link to="/projects" className="navbar">Projects</Link>
         <Link to="/about" className="navbar">About</Link>
@@ -29,5 +30,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;

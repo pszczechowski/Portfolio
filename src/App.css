@@ -1,11 +1,9 @@
-.item {
+#item {
     padding: 15px;
     background-color: blueviolet;
-    overflow: auto;
-    width: 100%;
     position: sticky;
     top: 0;
-    
+    transition: top 0.3s;
 }
 
 .navbar {
@@ -19,6 +17,11 @@
     background-color: whitesmoke;
     color: black;
 }
+
+.button {
+    background-color: inherit;
+}
+
 @media screen and (max-width: 500px) {
     .navbar {
         display: block;
