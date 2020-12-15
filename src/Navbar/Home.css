@@ -3,9 +3,14 @@
 }
 
 .textHome {
+  font-family: KalamRegular;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
   align-items: center;
+  resize: horizontal;
 }
 
 .background {

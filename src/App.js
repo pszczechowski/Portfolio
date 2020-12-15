@@ -5,7 +5,6 @@ import Home from './Navbar/Home';
 import Projects from './Navbar/Projects';
 import About from './Navbar/About';
 import Contact from './Navbar/Contact';
-import onScroll from './Components/Nav'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faCheckSquare, faCoffee, faBars } from '@fortawesome/free-solid-svg-icons'

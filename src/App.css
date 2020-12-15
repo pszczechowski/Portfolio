@@ -4,6 +4,7 @@
     position: sticky;
     top: 0;
     transition: top 0.3s;
+    font-family: KalamRegular;
 }
 
 .navbar {
