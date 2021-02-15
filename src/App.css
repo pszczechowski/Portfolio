@@ -1,5 +1,6 @@
 #item {
     display: flex;
+    position: static;
     font-family: KalamRegular;
     width:100%;
     background-color: rgb(138, 44, 226);
