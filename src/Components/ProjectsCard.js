@@ -12,13 +12,23 @@ const useStyles = makeStyles({
   cardStyle: {
     display: 'flex',
     justifyContent: 'space-evenly',
-    flexdirection: 'column',
-    '@media(maxwidth: 200)' : {
-        flexdirection: 'column',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    '@media(max-width:650px)': {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-beetwen',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      width: '50%',
+      height: '50%',
     }
   },
   cardData: {
-    width: 300,
+    padding: 10,
+    '@media(max-width:650px)': {
+      width: '100%',
+    }
   },
   description: {
     height: 100,
@@ -49,6 +59,14 @@ const cardDatas = [{
   nameOfProject: 'Neural Networks',
   description: 'Machine Learning in Python: Iris Classification',
   button: 'https://github.com/pszczechowski/NeuralNetworks'
+},
+{
+  id: 3,
+  image: './assets/FeedMe.png',
+  title: 'FeedMe',
+  nameOfProject: 'App FeedMe',
+  description: 'Engineering project of a mobile application made in React Native',
+  button: ''
 },];
 
 
