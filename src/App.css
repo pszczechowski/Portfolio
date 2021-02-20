@@ -29,7 +29,7 @@
 }
 
 .bm-burger-button {
-  position: absolute;
+  position: fixed;
   width: 36px;
   height: 30px;
   right: 20px;
@@ -58,7 +58,7 @@
 /* General sidebar styles */
 
 .bm-menu {
-  background: rgb(138, 44, 226);;
+  background: rgb(138, 44, 226);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -99,14 +99,12 @@
 
 @media screen and (min-width: 500px) {
   .bm-burger-button {
-    display: block;
-    visibility: hidden;
-   
+    display: none;
   }
 }
-  @media screen and (max-width: 500px){
-    #item{
-      display: block;
-      visibility: hidden;
+  @media screen and (max-width: 499px){
+    #container #navBar{
+      display: none;
+
     }
   }
