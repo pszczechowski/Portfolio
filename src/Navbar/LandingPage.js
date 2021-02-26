@@ -24,12 +24,8 @@ const useStyles = makeStyles({
     },
     navBar: {
         fontFamily: 'KalamRegular',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'right',
-        alignItems: 'center',
-        textAlign: 'center',
-        alignItems: 'flex-start',
+        display: 'flex', 
+        justifyContent: 'right',                
         margin: 'auto',
         backgroundColor: 'black',
         opacity: '0.8',
@@ -37,6 +33,7 @@ const useStyles = makeStyles({
         height: '100%',
         position: 'sticky',
         zIndex: 1,
+        transition: '0.6s',
     },
     home: {
         fontFamily: 'KalamRegular',

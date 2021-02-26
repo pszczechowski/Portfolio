@@ -61,7 +61,7 @@ const useStyles = makeStyles({
 function Home(props) {
     const classes = useStyles();
     return (
-        <div className={classes.home}>
+        <div id="home" className={classes.home}>
             <div className={classes.textHome}>
                 <h1>
                     Hello, I am Piotr Szczechowski.
