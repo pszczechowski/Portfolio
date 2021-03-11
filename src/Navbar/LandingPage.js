@@ -5,6 +5,10 @@ import About from "./About";
 import Contact from "./Contact";
 import Home from "./Home";
 import { makeStyles } from '@material-ui/core/styles';
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
@@ -24,8 +28,8 @@ const useStyles = makeStyles({
     },
     navBar: {
         fontFamily: 'KalamRegular',
-        display: 'flex', 
-        justifyContent: 'right',                
+        display: 'flex',
+        justifyContent: 'right',
         margin: 'auto',
         backgroundColor: 'black',
         opacity: '0.8',
@@ -56,10 +60,10 @@ function LandingPage() {
                 <a href="#about" className="navbar">About</a>
                 <a href="#contact" className="navbar">Contact</a>
             </div>
-            <div className={classes.home}><Home /></div>
-            <div className={classes.projects}><Projects /></div>
-            <div className={classes.about}><About /></div>
-            <div className={classes.contact}><Contact /></div>
+            <div className={classes.home} data-aos="zoom-out" data-aos-duration="2000"><Home /></div>
+            <div className={classes.projects} data-aos="fade-up" data-aos-duration="2000"><Projects /></div>
+            <div className={classes.about} data-aos="fade-up" data-aos-duration="2000"><About /></div>
+            <div className={classes.contact} data-aos="fade-up" data-aos-duration="2000"><Contact /></div>
         </div>
 
     )
