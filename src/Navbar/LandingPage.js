@@ -1,5 +1,4 @@
 import React from "react"
-// import './LandingPage.css';
 import Projects from "./Projects";
 import About from "./About";
 import Contact from "./Contact";
@@ -64,6 +63,7 @@ function LandingPage() {
             <div className={classes.projects} data-aos="fade-up" data-aos-duration="2000"><Projects /></div>
             <div className={classes.about} data-aos="fade-up" data-aos-duration="2000"><About /></div>
             <div className={classes.contact} data-aos="fade-up" data-aos-duration="2000"><Contact /></div>
+
         </div>
 
     )

@@ -3,6 +3,10 @@ import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import emailjs from 'emailjs-com';
+import { init } from 'emailjs-com';
+init("user_uXvyFhRHg1WBtAAOR2zwn");
+
 
 const useStyles = makeStyles({
   contact: {
@@ -66,23 +70,33 @@ const useStyles = makeStyles({
 })
 
 function Contact(props) {
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('portfolioEmail', 'template_ie1aj7g', e.target, 'user_uXvyFhRHg1WBtAAOR2zwn')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+  }
+
   const classes = useStyles();
   return (
     <div id="contact" className={classes.contact}>
-      <form className={classes.root} noValidate autoComplete="off">
+      <form className={classes.root} onSubmit={sendEmail}>
         <div className={classes.contactForm}>
           <h1>Get in touch</h1>
           <TextField
-            id="emailInput"
+            name="user_email"
             label="Email"
             type="email"
-            autoComplete="current-email"
             variant="outlined"
-            validators={['required', 'isEmail']}
-            errorMessages={['this field is required', 'email is not valid']}
           />
           <TextField
             id="outlined-textarea"
+            name="message"
             label="Message"
             rows="4"
             placeholder="Write message"
@@ -91,7 +105,7 @@ function Contact(props) {
             margin="normal"
             variant="outlined"
           />
-          <Button className={classes.contactButton} href="#" variant="contained" color="primary">
+          <Button className={classes.contactButton} variant="contained" color="primary" type="submit" value="Send">
             Send
           </Button>
           <div className={classes.socialLink}>
