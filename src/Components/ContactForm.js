@@ -1,10 +1,39 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import { withStyles } from "@material-ui/core/styles";
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
-import './../Components/ContactForm.css'
 import emailjs from 'emailjs-com';
 import { init } from 'emailjs-com';
 init("user_uXvyFhRHg1WBtAAOR2zwn");
+
+const styles = theme => ({
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+    '& .MuiOutlinedInput-inputMultiline': {
+      color: 'white',
+    },
+    '& .MuiInputBase-input': {
+      color: 'white'
+    },
+    '& .MuiFormLabel-root': {
+      color: 'white',
+      fontFamily: 'KalamRegular',
+    },
+    '& .MuiOutlinedInput-input':{
+      color: 'white'
+    },
+    '& h1': {
+      display: 'flex',
+      justifyContent: 'center',
+      color: 'white',
+      fontFamily: 'KalamRegular',
+    },
+    '& .MuiOutlinedInput-notchedOutline': {
+      borderColor: 'white'
+    },
+  },
+});
 
 function sendEmail(e) {
   e.preventDefault();
@@ -44,8 +73,9 @@ class ContactForm extends React.Component {
   
   render() {
     const { formData, submitted } = this.state;
+    const { classes } = this.props;
     return (
-      <div id="contact">
+      <div className={classes.root}>
       <ValidatorForm
         ref="form"
         onSubmit={this.handleSubmit}
@@ -88,4 +118,4 @@ class ContactForm extends React.Component {
     );
   }
 }
-export default ContactForm;
+export default withStyles(styles)(ContactForm);

@@ -24,38 +24,13 @@ const useStyles = makeStyles({
     color: 'white',
     fontFamily: 'KalamRegular',
   },
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
-    '& .MuiOutlinedInput-inputMultiline': {
-      color: 'white',
-    },
-    '& .MuiInputBase-input': {
-      color: 'white'
-    },
-    '& .MuiFormLabel-root': {
-      color: 'white',
-      fontFamily: 'KalamRegular',
-    },
-    '& h1': {
-      display: 'flex',
-      justifyContent: 'center',
-      color: 'white',
-      fontFamily: 'KalamRegular',
-    },
-    '& .MuiOutlinedInput-notchedOutline': {
-      borderColor: 'white'
-    },
-  },
   contactForm: {
     display: 'flex',
     flexDirection: 'column',
-    width: '50%',
-    '& p': {
-      color: '#bf1650',
-    },
-    '@media screen and (max-width: 1000px)': {
-      width: '70%',
+    '& h1': {
+      color: 'white',
+      display: 'flex',
+      justifyContent: 'center',
     },
   },
   contactButton: {
@@ -75,13 +50,13 @@ function Contact(props) {
       <div className={classes.contactForm}>
         <h1>Get in touch</h1>
         <ContactForm />
+        </div>
         <div className={classes.socialLink}>
           <a className={classes.icon} href="https://github.com/pszczechowski" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={["fab", "github"]} color="white" /></a>
           <a className={classes.icon} href="https://www.linkedin.com/in/piotr-szczechowski-0649561b1/" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={["fab", "linkedin-in"]} color="white" /></a>
         </div>
-      </div>
       <span className={classes.footer}>Piotr Szczechowski © 2021. All rights reserved.</span>
     </div>
   )
