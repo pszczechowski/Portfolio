@@ -1,12 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
-import React from "react"
+import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import emailjs from 'emailjs-com';
-import { init } from 'emailjs-com';
-init("user_uXvyFhRHg1WBtAAOR2zwn");
-
+import ContactForm from "../Components/ContactForm";
 
 const useStyles = makeStyles({
   contact: {
@@ -56,6 +51,9 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     width: '50%',
+    '& p': {
+      color: '#bf1650',
+    },
     '@media screen and (max-width: 1000px)': {
       width: '70%',
     },
@@ -71,50 +69,19 @@ const useStyles = makeStyles({
 
 function Contact(props) {
 
-  function sendEmail(e) {
-    e.preventDefault();
-
-    emailjs.sendForm('portfolioEmail', 'template_ie1aj7g', e.target, 'user_uXvyFhRHg1WBtAAOR2zwn')
-      .then((result) => {
-        console.log(result.text);
-      }, (error) => {
-        console.log(error.text);
-      });
-  }
-
   const classes = useStyles();
   return (
     <div id="contact" className={classes.contact}>
-      <form className={classes.root} onSubmit={sendEmail}>
-        <div className={classes.contactForm}>
-          <h1>Get in touch</h1>
-          <TextField
-            name="user_email"
-            label="Email"
-            type="email"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-textarea"
-            name="message"
-            label="Message"
-            rows="4"
-            placeholder="Write message"
-            multiline
-            className={classes.textField}
-            margin="normal"
-            variant="outlined"
-          />
-          <Button className={classes.contactButton} variant="contained" color="primary" type="submit" value="Send">
-            Send
-          </Button>
-          <div className={classes.socialLink}>
-            <a className={classes.icon} href="https://github.com/pszczechowski" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={["fab", "github"]} color="white" /></a>
-            <a className={classes.icon} href="https://www.linkedin.com/in/piotr-szczechowski-0649561b1/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={["fab", "linkedin-in"]} color="white" /></a>
-          </div>
-        </div></form>
+      <div className={classes.contactForm}>
+        <h1>Get in touch</h1>
+        <ContactForm />
+        <div className={classes.socialLink}>
+          <a className={classes.icon} href="https://github.com/pszczechowski" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={["fab", "github"]} color="white" /></a>
+          <a className={classes.icon} href="https://www.linkedin.com/in/piotr-szczechowski-0649561b1/" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={["fab", "linkedin-in"]} color="white" /></a>
+        </div>
+      </div>
       <span className={classes.footer}>Piotr Szczechowski © 2021. All rights reserved.</span>
     </div>
   )
