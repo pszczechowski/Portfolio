@@ -93,7 +93,7 @@ export default function ProjectCard() {
             <CardActions>
               <Button className={classes.button} href={cardData.button} target="_blank" size="small" color="primary">
                 Visit
-        </Button>
+              </Button>
               <FontAwesomeIcon className="github" icon={["fab", "github"]} />
             </CardActions>
           </Card></div>

@@ -72,7 +72,7 @@ function Home(props) {
                 <h2>
                     <Button className={classes.projectButton} href="#projects" variant="contained" color="primary">
                         Visit my Projects
-                      </Button>
+                    </Button>
                 </h2></div></div>
     )
 }

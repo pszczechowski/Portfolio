@@ -20,7 +20,7 @@ const styles = theme => ({
       color: 'white',
       fontFamily: 'KalamRegular',
     },
-    '& .MuiOutlinedInput-input':{
+    '& .MuiOutlinedInput-input': {
       color: 'white'
     },
     '& h1': {
@@ -70,51 +70,51 @@ class ContactForm extends React.Component {
     sendEmail(e);
     this.changeText();
   }
-  
+
   render() {
     const { formData, submitted } = this.state;
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-      <ValidatorForm
-        ref="form"
-        onSubmit={this.handleSubmit}
-      >
-        <TextValidator
-          label="Email"
-          onChange={this.handleChange}
-          name="email"
-          value={formData.email}
-          validators={['required', 'isEmail']}
-          errorMessages={['this field is required', 'email is not valid']}
-          variant="outlined"
-        />
-        <TextValidator
-          id="outlined-textarea"
-          name="message"
-          label="Message"
-          rows="4"
-          placeholder="Write message"
-          multiline
-          margin="normal"
-          variant="outlined"
-          value={formData.message}
-          onChange={this.handleChange}
-          validators={['required']}
-          errorMessages={['this field is required']}
-        />
-        <Button
-          color="primary"
-          variant="contained"
-          type="submit"
-          disabled={submitted}
+        <ValidatorForm
+          ref="form"
+          onSubmit={this.handleSubmit}
         >
-          {
-            (submitted && 'Your message is send!')
-            || (!submitted && 'Send')
-          }
-        </Button>
-      </ValidatorForm></div>
+          <TextValidator
+            label="Email"
+            onChange={this.handleChange}
+            name="email"
+            value={formData.email}
+            validators={['required', 'isEmail']}
+            errorMessages={['this field is required', 'email is not valid']}
+            variant="outlined"
+          />
+          <TextValidator
+            id="outlined-textarea"
+            name="message"
+            label="Message"
+            rows="4"
+            placeholder="Write message"
+            multiline
+            margin="normal"
+            variant="outlined"
+            value={formData.message}
+            onChange={this.handleChange}
+            validators={['required']}
+            errorMessages={['this field is required']}
+          />
+          <Button
+            color="primary"
+            variant="contained"
+            type="submit"
+            disabled={submitted}
+          >
+            {
+              (submitted && 'Your message is send!')
+              || (!submitted && 'Send')
+            }
+          </Button>
+        </ValidatorForm></div>
     );
   }
 }
