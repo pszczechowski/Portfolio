@@ -12,11 +12,18 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     color: 'white',
+    padding: '10px',
 
   },
   icon: {
     padding: '10px',
+    borderRadius: '40px',
+    justifyContent: 'space-between',
+    "&:hover": {
+      background: "#303f9f"
+    },
   },
+ 
   footer: {
     backgroundColor: 'black',
     display: 'flex',
@@ -53,9 +60,9 @@ function Contact(props) {
       </div>
       <div className={classes.socialLink}>
         <a className={classes.icon} href="https://github.com/pszczechowski" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={["fab", "github"]} color="white" /></a>
+          <FontAwesomeIcon icon={["fab", "github"]} color="white" size= "2x" /></a>
         <a className={classes.icon} href="https://www.linkedin.com/in/piotr-szczechowski-0649561b1/" target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon icon={["fab", "linkedin-in"]} color="white" /></a>
+          <FontAwesomeIcon icon={["fab", "linkedin-in"]} color="white" size= "2x" /></a>
       </div>
       <span className={classes.footer}>Piotr Szczechowski © 2021. All rights reserved.</span>
     </div>

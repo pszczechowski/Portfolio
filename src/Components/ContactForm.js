@@ -9,12 +9,13 @@ init("user_uXvyFhRHg1WBtAAOR2zwn");
 const styles = theme => ({
   root: {
     display: 'flex',
+    width: '100%',
     justifyContent: 'center',
     '& .MuiOutlinedInput-inputMultiline': {
       color: 'white',
     },
     '& .MuiInputBase-input': {
-      color: 'white'
+      color: 'white',
     },
     '& .MuiFormLabel-root': {
       color: 'white',
@@ -22,6 +23,9 @@ const styles = theme => ({
     },
     '& .MuiOutlinedInput-input': {
       color: 'white'
+    },
+    '& .MuiFormControl-root':{
+      width: '100%',
     },
     '& h1': {
       display: 'flex',
@@ -33,6 +37,11 @@ const styles = theme => ({
       borderColor: 'white'
     },
   },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '70%',
+  }
 });
 
 function sendEmail(e) {
@@ -76,7 +85,7 @@ class ContactForm extends React.Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <ValidatorForm
+        <ValidatorForm className={classes.form}
           ref="form"
           onSubmit={this.handleSubmit}
         >
