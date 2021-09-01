@@ -40,13 +40,6 @@ const useStyles = makeStyles({
       justifyContent: 'center',
     },
   },
-  contactButton: {
-    display: 'flex',
-    justifyItems: 'center',
-    backgroundColor: 'black',
-    opacity: '0.7',
-    fontFamily: 'KalamRegular',
-  }
 })
 
 function Contact(props) {

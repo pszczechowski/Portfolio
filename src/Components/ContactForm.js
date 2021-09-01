@@ -14,9 +14,6 @@ const styles = theme => ({
     '& .MuiOutlinedInput-inputMultiline': {
       color: 'white',
     },
-    '& .MuiInputBase-input': {
-      color: 'white',
-    },
     '& .MuiFormLabel-root': {
       color: 'white',
       fontFamily: 'KalamRegular',
@@ -41,7 +38,14 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
     width: '70%',
-  }
+  },
+  button: {
+    display: 'flex',
+    justifyContent: 'center',
+    '& .MuiButtonBase-root': {
+      width: '30%',
+    }
+  },
 });
 
 function sendEmail(e) {
@@ -112,6 +116,7 @@ class ContactForm extends React.Component {
             validators={['required']}
             errorMessages={['this field is required']}
           />
+          <div className={classes.button}>
           <Button
             color="primary"
             variant="contained"
@@ -122,7 +127,7 @@ class ContactForm extends React.Component {
               (submitted && 'Your message is send!')
               || (!submitted && 'Send')
             }
-          </Button>
+          </Button></div>
         </ValidatorForm></div>
     );
   }
