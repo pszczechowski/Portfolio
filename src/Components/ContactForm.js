@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import emailjs from 'emailjs-com';
 import { init } from 'emailjs-com';
+import SendIcon from '@mui/icons-material/Send';
 init("user_uXvyFhRHg1WBtAAOR2zwn");
 
 const styles = theme => ({
@@ -44,6 +45,9 @@ const styles = theme => ({
     justifyContent: 'center',
     '& .MuiButtonBase-root': {
       width: '30%',
+    },
+    disabledButton: {
+      color: 'primary'
     }
   },
 });
@@ -66,6 +70,7 @@ class ContactForm extends React.Component {
       message: '',
     },
     submitted: false,
+    color: "success",
   }
   handleChange = (event) => {
     const formData = this.state;
@@ -120,8 +125,9 @@ class ContactForm extends React.Component {
           <Button
             color="primary"
             variant="contained"
-            type="submit"
-            disabled={submitted}
+            endIcon={<SendIcon />}
+            type="submit"       
+            classes={{ disabled: classes.disabledButton}}
           >
             {
               (submitted && 'Your message is send!')
