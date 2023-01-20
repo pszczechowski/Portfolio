@@ -5,6 +5,12 @@ export default props => {
   return (
     // Pass on our props
     <Menu {...props}>
+      <img
+        alt="logo"
+        src="/branch.png"
+        width="50"
+        height="50"
+      />
       <a className="menu-item" href="#home">
         Home
       </a>
