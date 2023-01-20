@@ -67,7 +67,7 @@ function Home(props) {
                     Hello, I am Piotr Szczechowski.
                 </h1>
                 <h2>
-                    <ReactRotatingText items={["Front End Developer"]} />
+                    <ReactRotatingText items={["Software Developer"]} />
                 </h2>
                 <h2>
                     <Button className={classes.projectButton} href="#projects" variant="contained" color="primary">

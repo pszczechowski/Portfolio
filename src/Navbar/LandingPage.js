@@ -47,6 +47,10 @@ const useStyles = makeStyles({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
     },
+    logo: {
+        display: 'flex',
+        flexBasis: '90%'
+    }
 })
 
 function LandingPage() {
@@ -54,6 +58,13 @@ function LandingPage() {
     return (
         <div id='container' className={classes.container}>
             <div id="navBar" className={classes.navBar}>
+                <div id="logo" className={classes.logo}>
+                    <img
+                        alt="logo"
+                        src="/branch.png"
+                        width="50"
+                        height="50"
+                    /></div>
                 <a href="#home" className="navbar">Home</a>
                 <a href="#projects" className="navbar">Projects</a>
                 <a href="#about" className="navbar">About</a>
