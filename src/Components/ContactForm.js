@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import { withStyles } from "@material-ui/core/styles";
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 import emailjs from 'emailjs-com';
@@ -38,17 +38,14 @@ const styles = theme => ({
   form: {
     display: 'flex',
     flexDirection: 'column',
-    width: '70%',
+    width: '80%',
   },
   button: {
     display: 'flex',
     justifyContent: 'center',
     '& .MuiButtonBase-root': {
-      width: '30%',
+      width: '60%',
     },
-    disabledButton: {
-      color: 'primary'
-    }
   },
 });
 
@@ -70,7 +67,6 @@ class ContactForm extends React.Component {
       message: '',
     },
     submitted: false,
-    color: "success",
   }
   handleChange = (event) => {
     const formData = this.state;
@@ -80,7 +76,7 @@ class ContactForm extends React.Component {
 
   changeText = () => {
     this.setState({ submitted: true }, () => {
-      setTimeout(() => this.setState({ submitted: false }), 3000);
+      setTimeout(() => this.setState({ submitted: false }), 2000);   
     });
   }
 
@@ -90,7 +86,7 @@ class ContactForm extends React.Component {
   }
 
   render() {
-    const { formData, submitted } = this.state;
+    const { formData, submitted} = this.state;
     const { classes } = this.props;
     return (
       <div className={classes.root}>
@@ -123,14 +119,13 @@ class ContactForm extends React.Component {
           />
           <div className={classes.button}>
           <Button
-            color="primary"
+            color={submitted ? "success" : "primary"}
             variant="contained"
             endIcon={<SendIcon />}
-            type="submit"       
-            classes={{ disabled: classes.disabledButton}}
+            type="submit"     
           >
             {
-              (submitted && 'Your message is send!')
+              (submitted && 'Success')
               || (!submitted && 'Send')
             }
           </Button></div>

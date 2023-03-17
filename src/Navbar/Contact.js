@@ -27,7 +27,7 @@ const useStyles = makeStyles({
   footer: {
     backgroundColor: 'black',
     display: 'flex',
-    justifyContent: 'left',
+    justifyContent: 'center',
     color: 'white',
     fontFamily: 'KalamRegular',
   },
